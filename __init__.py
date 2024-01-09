@@ -10,7 +10,7 @@ from ovos_workshop.skills.common_play import OVOSCommonPlaybackSkill
 class SilentHallOfFameSkill(OVOSCommonPlaybackSkill):
     def __init__(self, *args, **kwargs):
         self.supported_media = [MediaType.SILENT_MOVIE]
-        self.skill_icon = join(dirname(__file__), "ui", "silent_hof_icon.gif")
+        self.skill_icon = join(dirname(__file__), "res", "silent_hof_icon.gif")
         self.archive = {v["streams"][0]: v for v in JsonStorage(f"{dirname(__file__)}/silenthalloffame.json").values()
                         if v["streams"]}
         super().__init__(*args, **kwargs)
